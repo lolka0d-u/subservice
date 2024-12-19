@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// For now creator tokens will be created after request through mail
+// and later person verification to ensure that there is no deception
+model CreatorToken {
+  id        String    @id
+  owner     String
+  payto     String
+  createdAt DateTime  @default(now())
+}

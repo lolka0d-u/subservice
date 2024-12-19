@@ -2,7 +2,7 @@
 /dist
 /node_modules
 /build
-
+subservice
 # Logs
 logs
 *.log
